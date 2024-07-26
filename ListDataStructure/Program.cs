@@ -7,23 +7,28 @@
             // Print "Hello, World!" to the console
             Console.WriteLine("Hello, World!");
 
-            // Declare and initialize an array of integers
-            int[] arr = { 45, 64, 84, 19, 2, 7, 15, 91, 53 };
+            // Declare an integer array with 10 elements, all initialized to 0 by default
+            int[] arr = new int[10];
 
-            // Use LINQ to append the value 2 to the array 'arr'
-            // Append method returns an IEnumerable<int> which is a sequence of elements.
-            IEnumerable<int> arr1 = arr.Append(2);
+            // Convert the integer array to a List<int>, append the value 2, and store it in arr1
+            List<int> arr1 = arr.Append(2).ToList();
 
-            // Declare and initialize an array of strings
+            // Declare and initialize a string array with three string values
             string[] arrString = { "Hello", "World", "Hi" };
 
-            // Append the value 2 to arr1 (note: this result is not used or assigned to any variable)
-            arr1.Append(2);
-            // Print the integer array to the console using the PrintArray method
+            // Add the value 2 to the List<int> arr1
+            arr1.Add(2);
+
+            // Print the integer array arr to the console using the PrintArray method
             PrintArray(arr);
-            // Print the string array to the console using the PrintArray method
+
+            // Print the string array arrString to the console using the PrintArray method
             PrintArray(arrString);
+
+            // Filter arr1 to include only elements that are equal to 43, convert the result to an array, and print it
+            PrintArray(arr1.Where(x => x == 43).ToArray());
         }
+
 
         // A generic method to print elements of an array to the console
         public static void PrintArray<T>(T[] arr)
