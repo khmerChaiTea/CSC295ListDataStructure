@@ -56,5 +56,29 @@ namespace ListDataStructure.Tests
             Assert.AreEqual(list.List[0], 4);
             Assert.AreEqual(list.List[list.Size - 1], 32);
         }
+
+        [TestMethod()]
+        public void AddStart_ListIsEmpty_ShouldAddToStart()
+        {
+            // Arrange
+            MyArrayList list = new MyArrayList();
+            // Act
+            list.AddStart(4);
+            // Assert
+            Assert.AreEqual(list.List[0], 4);
+        }
+
+        [TestMethod()]
+        public void AddStart_ListHasValues_ShouldAddToStart()
+        {
+            // Arrange
+            MyArrayList list = new MyArrayList();
+            list.Append(10);
+            list.Append(5);
+            // Act
+            list.AddStart(4);
+            // Assert
+            Assert.AreEqual(list.List[0], 4);
+        }
     }
 }
