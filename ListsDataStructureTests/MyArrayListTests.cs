@@ -34,5 +34,27 @@ namespace ListDataStructure.Tests
             Assert.AreEqual(list.List[0], 4);
             Assert.AreEqual(list.List[1], 1);
         }
+
+        [TestMethod()]
+        public void Append_AddMoreElementsThanSizeAllows_ShouldAddToEnd()
+        {
+            // Arrange
+            MyArrayList list = new MyArrayList();
+            // Act
+            list.Append(4);
+            list.Append(1);
+            list.Append(7);
+            list.Append(1);
+            list.Append(8);
+            list.Append(0);
+            list.Append(9);
+            list.Append(41);
+            list.Append(70);
+            list.Append(91);
+            list.Append(32);
+            // Assert
+            Assert.AreEqual(list.List[0], 4);
+            Assert.AreEqual(list.List[list.Size - 1], 32);
+        }
     }
 }
