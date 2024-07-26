@@ -50,7 +50,9 @@ namespace ListDataStructure
             // Shift all elements to the right to make room for the new element at the start
             for (int i = _size; i >= 0; i--)
             {
-                _list[i + 1] = i;
+                // _list[i + 1] = i; method contains a logical error where it
+                // incorrectly assigns the index values instead of the element values
+                _list[i + 1] = _list[i];
             }
 
             // Insert the new value at the start of the list
