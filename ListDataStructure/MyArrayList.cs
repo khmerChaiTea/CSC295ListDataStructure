@@ -85,6 +85,11 @@ namespace ListDataStructure
             if (_size <= 0) return;
             for (int i = 0; i < _size; i++)
             {
+                if (i + 1 == _size)
+                {
+                    _list[i] = 0;
+                    break;
+                }
                 _list[i] = _list[i + 1];
             }
 

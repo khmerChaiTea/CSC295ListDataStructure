@@ -140,5 +140,24 @@ namespace ListDataStructure.Tests
             Assert.AreEqual(0, list.List[2]);
             Assert.IsTrue(list.Size == 2);
         }
+
+        [TestMethod()]
+        public void DeleteStart_ListIsFull_ShouldDeleteFirstElement()
+        {
+            // Arrange
+            MyArrayList list = new MyArrayList(3);
+            list.Append(5);
+            list.Append(3);
+            list.Append(2);
+
+            // Act
+            list.DeleteStart();
+
+            // Assert
+            Assert.AreEqual(3, list.List[0]);
+            Assert.AreEqual(2, list.List[1]);
+            Assert.AreEqual(0, list.List[2]);
+            Assert.IsTrue(list.Size == 2);
+        }
     }
 }
