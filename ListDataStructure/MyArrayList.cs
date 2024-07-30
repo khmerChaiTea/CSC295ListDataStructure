@@ -70,11 +70,22 @@ namespace ListDataStructure
             IncreaseCapacity();
             for (int i = _size -1; i >= indexToInsertAt; i--)
             {
-                _list[i + 1] = i;
+                _list[i + 1] = _list[i];
             }
 
             _list[indexToInsertAt] = value;
             ++_size;
+        }
+
+        public void DeleteStart()
+        {
+            if (_size <= 0) return;
+            for (int i = 0; i < _size; i++)
+            {
+                _list[i] = _list[i + 1];
+            }
+
+            --_size;
         }
 
         // Private method to increase the capacity of the internal array when needed
