@@ -80,5 +80,29 @@ namespace ListDataStructure.Tests
             // Assert
             Assert.AreEqual(list.List[0], 4);
         }
+
+        [TestMethod()]
+        public void Insert_ListIsEmpty_ShouldAddToStart()
+        {
+            // Arrange
+            MyArrayList list = new MyArrayList();
+            // Act
+            list.Insert(5, 0);
+            // Assert
+            Assert.AreEqual(5, list.List[0]);
+        }
+
+        [TestMethod()]
+        public void Insert_ListIsEmptyIndexIsValid_ShouldThroeException()
+        {
+            // Arrange
+            MyArrayList list = new MyArrayList();
+            // Act
+           
+            // Assert
+            Assert.ThrowsException<IndexOutOfRangeException>(
+                () => list.Insert(5, 2),
+                "Index is invalid");
+        }
     }
 }

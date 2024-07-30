@@ -60,6 +60,23 @@ namespace ListDataStructure
             ++_size;
         }
 
+        public void Insert(int value, int indexToInsertAt)
+        {
+            if (indexToInsertAt < 0 || indexToInsertAt > _size)
+            {
+                throw new IndexOutOfRangeException($"Index {indexToInsertAt} is invalid");
+            }
+            // Ensure there is enough capacity to add the new element
+            IncreaseCapacity();
+            for (int i = _size -1; i >= indexToInsertAt; i--)
+            {
+                _list[i + 1] = i;
+            }
+
+            _list[indexToInsertAt] = value;
+            ++_size;
+        }
+
         // Private method to increase the capacity of the internal array when needed
         private void IncreaseCapacity()
         {
