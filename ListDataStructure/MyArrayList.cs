@@ -70,6 +70,8 @@ namespace ListDataStructure
             IncreaseCapacity();
             for (int i = _size -1; i >= indexToInsertAt; i--)
             {
+                // _list[i + 1] = i; method contains a logical error where it
+                // incorrectly assigns the index values instead of the element values
                 _list[i + 1] = _list[i];
             }
 
@@ -79,6 +81,7 @@ namespace ListDataStructure
 
         public void DeleteStart()
         {
+            // If the size of the list is less than or equal to 0, return immediately
             if (_size <= 0) return;
             for (int i = 0; i < _size; i++)
             {
