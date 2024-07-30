@@ -86,7 +86,7 @@ namespace ListDataStructure
 
         public void DeleteEnd()
         {
-            if ((_size - 1) == 0) return;
+            if ((_size - 1) == 0) return;   // This is not refractor, size not index
             _list[--_size] = 0;
         }
 
