@@ -81,9 +81,20 @@ namespace ListDataStructure
 
         public void DeleteStart()
         {
+            DeleteFromIndex(0); // Called DeleteFromIndex() method
+        }
+
+        public void DeleteEnd()
+        {
+            if ((_size - 1) == 0) return;
+            _list[--_size] = 0;
+        }
+
+        public void DeleteFromIndex(int index)
+        {
             // If the size of the list is less than or equal to 0, return immediately
             if (_size <= 0) return;
-            for (int i = 0; i < _size; i++)
+            for (int i = index; i < _size; i++)
             {
                 if (i + 1 == _size)
                 {
