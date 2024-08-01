@@ -6,33 +6,33 @@ using System.Threading.Tasks;
 
 namespace ListDataStructure
 {
-    public class MyArrayList
+    public class MyArrayList<T>
     {
         // Internal array to hold the elements of the list
-        int[] _list;
+        T[] _list;
         // Tracks the current number of elements in the list
         int _size = 0;
         // Public property to get the current number of elements
         public int Size { get { return _size; } }
         // Public property to get the internal array (not recommended for modification outside the class)
-        public int[] List { get { return _list; } }
+        public T[] List { get { return _list; } }
 
         // Default constructor initializing the internal array with a capacity of 10
         public MyArrayList()
         {
-            _list = new int[10];
+            _list = new T[10];
         }
 
         // Constructor initializing the internal array with a given size
         public MyArrayList(int size)
         {
-            _list = new int[size];
+            _list = new T[size];
         }
 
         /// <summary>
         /// Will add the incoming value to the end of the list
         /// </summary>
-        public void Append(int value) 
+        public void Append(T value) 
         {
             // Ensure there is enough capacity to add the new element
             IncreaseCapacity();
@@ -43,7 +43,7 @@ namespace ListDataStructure
         /// <summary>
         /// Adds the incoming value to the start of the list
         /// </summary>
-        public void AddStart(int value)
+        public void AddStart(T value)
         {
             // Ensure there is enough capacity to add the new element
             IncreaseCapacity();
@@ -60,7 +60,7 @@ namespace ListDataStructure
             ++_size;
         }
 
-        public void Insert(int value, int indexToInsertAt)
+        public void Insert(T value, int indexToInsertAt)
         {
             if (indexToInsertAt < 0 || indexToInsertAt > _size)
             {
@@ -87,7 +87,7 @@ namespace ListDataStructure
         public void DeleteEnd()
         {
             if ((_size - 1) == 0) return;   // This is not refractor, size not index
-            _list[--_size] = 0;
+            _list[--_size] = default(T);
         }
 
         public void DeleteFromIndex(int index)
@@ -98,7 +98,7 @@ namespace ListDataStructure
             {
                 if (i + 1 == _size)
                 {
-                    _list[i] = 0;
+                    _list[i] = default(T);
                     break;
                 }
                 _list[i] = _list[i + 1];
@@ -113,7 +113,7 @@ namespace ListDataStructure
             // If the array has not reached its capacity, do nothing
             if (_size != _list.Length) return;
             // Double the size of the internal array
-            int[] newArray = new int[_size * 2];
+            T[] newArray = new T[_size * 2];
             // Copy existing elements to the new array
             for (int i = 0; i < _size; i++)
             {

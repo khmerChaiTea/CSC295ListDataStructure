@@ -15,7 +15,7 @@ namespace ListDataStructure.Tests
         public void Append_SingleElement_ShouldAddToEnd()
         {
             // Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.Append(4);
             // Assert
@@ -25,8 +25,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void Append_MultipleElements_ShouldAddToEnd()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList();
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.Append(4);
             list.Append(1);
@@ -38,8 +38,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void Append_AddMoreElementsThanSizeAllows_ShouldAddToEnd()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList();
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.Append(4);
             list.Append(1);
@@ -60,8 +60,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void AddStart_ListIsEmpty_ShouldAddToStart()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList();
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.AddStart(4);
             // Assert
@@ -71,8 +71,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void AddStart_ListHasValues_ShouldAddToStart()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList();
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>();
             list.Append(10);
             list.Append(5);
             // Act
@@ -84,8 +84,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void Insert_ListIsEmpty_ShouldAddToStart()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList();
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.Insert(5, 0);
             // Assert
@@ -95,8 +95,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void Insert_ListIsEmptyIndexIsValid_ShouldThroeException()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList();
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>();
             // Act
            
             // Assert
@@ -108,8 +108,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void Insert_ListHasValues_ShouldInsertAtCorrectPosition()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList();
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>();
             list.Append(5);
             list.Append(3);
             list.Append(2);
@@ -125,8 +125,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void DeleteStart_ListHasValue_ShouldDeleteFirstElement()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList();
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>();
             list.Append(5);
             list.Append(3);
             list.Append(2);
@@ -144,8 +144,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void DeleteStart_ListIsFull_ShouldDeleteFirstElement()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList(3);
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>(3);
             list.Append(5);
             list.Append(3);
             list.Append(2);
@@ -163,8 +163,8 @@ namespace ListDataStructure.Tests
         [TestMethod()]
         public void DeleteEnd_ListHasValue_ShouldDeleteFromEnd()
         {
-            // Arrange
-            MyArrayList list = new MyArrayList();
+			// Arrange
+			MyArrayList<int> list = new MyArrayList<int>();
             list.Append(5);
             list.Append(3);
             list.Append(2);
