@@ -178,5 +178,23 @@ namespace ListDataStructure.Tests
             Assert.AreEqual(3, list.List[1]);
             Assert.AreEqual(0, list.List[2]);
         }
-    }
+
+        [TestMethod]
+		public void DeleteStart_ListHasStringValue_ShouldDeleteFirstElement()
+		{
+			// Arrange
+			MyArrayList<string> list = new MyArrayList<string>();
+			list.Append("Fizz");
+			list.Append("Buzz");
+			list.Append("FizzBuzz");
+
+			// Act
+			list.DeleteStart();
+
+			// Assert
+			Assert.IsTrue(list.Size == 2);
+			Assert.AreEqual("Buzz", list.List[0]);
+			Assert.AreEqual("FizzBuzz", list.List[1]);
+		}
+	}
 }
